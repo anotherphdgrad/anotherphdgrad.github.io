@@ -8,8 +8,8 @@ const focusAreas = [
         text: 'Fairness-enhancing mechanisms for human-centric federated learning, including work with loss landscape and curvature signals.'
     },
     {
-        title: 'Privacy-Preserving ML',
-        text: 'Synthetic data generation, adversarial privacy defenses, and utility-preserving models for sensitive human-centered data.'
+        title: 'Robust Machine Learning',
+        text: 'Modeling approaches that emphasize reliability, generalization, and calibrated interpretation across noisy real-world sensing settings.'
     },
     {
         title: 'Interpretable Affective Computing',
@@ -104,7 +104,7 @@ const experiences = [
         dates: '2024-Present',
         details: [
             'Build AI-driven models for human-centric data in the Ubiquitous and Intelligent Sensing Lab.',
-            'Research diffusion-based acoustic-articulatory representation learning, fairness-aware federated learning, and privacy-preserving synthetic data generation.',
+            'Research diffusion-based acoustic-articulatory representation learning, fairness-aware federated learning, and robust multimodal representation learning.',
             'Work with UWB sensors, point clouds, physiological signals, IMU data, thermal imagery, RGB imagery, and speech features.'
         ]
     },
@@ -113,7 +113,7 @@ const experiences = [
         organization: 'Syracuse University, College of Engineering and Computer Science',
         dates: '2020-2024',
         details: [
-            'Developed machine learning systems for ubiquitous sensing, stress physiology, speech analysis, and privacy-aware affective computing.',
+            'Developed machine learning systems for ubiquitous sensing, stress physiology, speech analysis, and trustworthy affective computing.',
             'Designed model evaluation workflows with explainability tools including SHAP, LIME, and related interpretability methods.'
         ]
     },

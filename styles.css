@@ -90,15 +90,14 @@ main {
 
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(310px, 0.65fr);
-    gap: 32px;
-    align-items: stretch;
-    min-height: calc(100vh - 84px);
+    grid-template-columns: minmax(230px, 0.38fr) 1px minmax(0, 0.62fr);
+    gap: clamp(22px, 4vw, 46px);
+    align-items: center;
+    min-height: min(720px, calc(100vh - 84px));
     padding: 56px 0 26px;
 }
 
-.hero-copy,
-.profile-panel,
+.hero,
 .section-block,
 .contact-band {
     border: 1px solid var(--line);
@@ -110,7 +109,13 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: clamp(28px, 5vw, 64px);
+    padding: clamp(28px, 5vw, 62px) clamp(22px, 4vw, 52px) clamp(28px, 5vw, 62px) 0;
+}
+
+.hero-divider {
+    width: 1px;
+    height: min(420px, 58vh);
+    background: linear-gradient(180deg, transparent, var(--line) 16%, var(--line) 84%, transparent);
 }
 
 .eyebrow {
@@ -198,31 +203,72 @@ h3 {
 .profile-panel {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 100%;
+    padding: clamp(28px, 5vw, 62px) 0 clamp(28px, 5vw, 62px) clamp(22px, 4vw, 52px);
+    text-align: center;
 }
 
 .profile-photo {
-    width: 100%;
-    aspect-ratio: 4 / 5;
+    width: min(190px, 48vw);
+    height: min(190px, 48vw);
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 18px 44px rgba(23, 32, 27, 0.18);
     object-fit: cover;
     object-position: center top;
     background: var(--surface-muted);
 }
 
 .profile-details {
-    padding: 22px;
+    width: min(100%, 320px);
+    margin-top: 22px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent-dark);
+    background: rgba(255, 255, 255, 0.72);
 }
 
 .profile-details p {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
     color: var(--muted);
-    font-size: 0.96rem;
 }
 
 .profile-details .profile-name {
     color: var(--ink);
-    font-size: 1.12rem;
-    font-weight: 800;
+    font-size: 1.2rem;
+    font-weight: 850;
+    line-height: 1.2;
+}
+
+.profile-affiliation {
+    color: var(--accent-dark);
+    font-size: 0.92rem;
+    font-weight: 750;
+    line-height: 1.35;
+}
+
+.profile-affiliation span {
+    display: block;
+}
+
+.profile-focus {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 0.94rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.profile-topics {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+    font-weight: 650;
+    letter-spacing: 0;
+    line-height: 1.45;
 }
 
 .research-agenda,
@@ -503,6 +549,26 @@ h3 {
         min-height: auto;
     }
 
+    .hero-copy,
+    .profile-panel {
+        padding: 0 clamp(24px, 5vw, 42px);
+    }
+
+    .profile-panel {
+        padding-top: clamp(26px, 5vw, 42px);
+    }
+
+    .hero-copy {
+        padding-bottom: clamp(26px, 5vw, 42px);
+    }
+
+    .hero-divider {
+        width: auto;
+        height: 1px;
+        margin: 0 clamp(24px, 5vw, 42px);
+        background: linear-gradient(90deg, transparent, var(--line) 12%, var(--line) 88%, transparent);
+    }
+
     .focus-grid,
     .skill-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -538,6 +604,16 @@ h3 {
     .section-block,
     .contact-band {
         padding: 22px;
+    }
+
+    .hero-copy,
+    .profile-panel {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+
+    .hero-divider {
+        margin: 0 22px;
     }
 
     .focus-grid,
