@@ -1,0 +1,281 @@
+\documentclass[a4paper,11pt]{article}
+\RequirePackage[T1]{fontenc}
+
+\usepackage{times}
+\usepackage{calc}
+\usepackage[shortcuts]{extdash}
+
+\usepackage{graphicx} 
+
+\reversemarginpar
+
+\usepackage[paper=letterpaper,
+            marginparwidth=1.1in,     % Length of section titles
+            marginparsep=.075in,       % Space between titles and text
+            margin=0.5in,               % 1 inch margins
+            tmargin=0.65in,
+            includemp]{geometry}
+
+\setlength{\parindent}{0in}
+
+\usepackage[shortlabels]{enumitem}
+
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{0em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newlist{bibsection}{itemize}{3}
+\setlist[bibsection]{label=,leftmargin=\bibhang,%
+        itemindent=-\bibhang,
+        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
+        topsep=0pt}
+\newlist{bibenum}{enumerate}{3}
+\setlist[bibenum]{label=[\arabic*],resume,leftmargin={\bibhang+\widthof{[999]}},%
+        itemindent=-\bibhang,
+        itemsep=0.05in,parsep=\z@,partopsep=0pt,
+        topsep=0pt}
+\let\oldendbibenum\endbibenum
+\def\endbibenum{\oldendbibenum\vspace{-.6\baselineskip}}
+\let\oldendbibsection\endbibsection
+\def\endbibsection{\oldendbibsection\vspace{-.6\baselineskip}}
+\makeatother
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+
+\renewcommand{\section}[1]{\pagebreak[3]%
+    \vspace{1.3\baselineskip}%
+    \phantomsection\addcontentsline{toc}{section}{#1}%
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\hyphenpenalty=10000\raggedright #1}}}%
+    \vspace{-\baselineskip}\par}
+
+\newcommand*\fixendlist[1]{%
+    \expandafter\let\csname preFixEndListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\csname preFixEndListend#1\endcsname\vspace{-0.6\baselineskip}}}
+
+\let\originalItem\item
+\newcommand*\fixouterlist[1]{%
+    \expandafter\let\csname preFixOuterList#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\def\csname #1\endcsname{\let\oldItem\item\def\item{\pagebreak[2]\oldItem}\csname preFixOuterList#1\endcsname}
+    \expandafter\let\csname preFixOuterListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\let\item\oldItem\csname preFixOuterListend#1\endcsname}}
+\newcommand*\fixinnerlist[1]{%
+    \expandafter\let\csname preFixInnerList#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\def\csname #1\endcsname{\let\oldItem\item\let\item\originalItem\csname preFixInnerList#1\endcsname}
+    \expandafter\let\csname preFixInnerListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\csname preFixInnerListend#1\endcsname\let\item\oldItem}}
+
+\newlist{outerlist}{itemize}{3}
+    \setlist[outerlist]{label=\enskip\textbullet,leftmargin=*}
+    \fixendlist{outerlist}
+    \fixouterlist{outerlist}
+
+\newlist{lonelist}{itemize}{3}
+    \setlist[lonelist]{label=\enskip\textbullet,leftmargin=*,partopsep=0pt,topsep=0pt}
+    \fixendlist{lonelist}
+    \fixouterlist{lonelist}
+
+\newlist{innerlist}{itemize}{3}
+    \setlist[innerlist]{label=\enskip\textbullet,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt}
+    \fixinnerlist{innerlist}
+
+\newlist{loneinnerlist}{itemize}{3}
+    \setlist[loneinnerlist]{label=\enskip\textbullet,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt}
+    \fixendlist{loneinnerlist}
+    \fixinnerlist{loneinnerlist}
+
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
+
+\usepackage{doi}
+\usepackage{url}
+
+\urlstyle{same}
+\providecommand*\emaillink[1]{\nolinkurl{#1}}
+\providecommand*\email[1]{\href{mailto:#1}{\emaillink{#1}}}
+
+\begin{document}
+
+ {\hspace*{-\marginparsep minus \marginparwidth}%
+\begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+\centering
+{\LARGE \bfseries {Harshit Sharma}}\\
+\vspace{0.1cm}
+\href{mailto:hsharm62@asu.edu}{\texttt{hsharm62@asu.edu}} \\
+\texttt{Contact:315-832-0553}\\
+\textit{\href{https://scholar.google.com/citations?user=Ja7tYhcAAAAJ&hl=en}{Google Scholar}}, \href{https://www.linkedin.com/in/harshit-sharma27/}{LinkedIn},
+\href{https://github.com/anotherphdgrad}{Github}
+\rule{\columnwidth}{1.2pt}
+\end{minipage}}
+ 
+ \vspace{0.2cm}
+
+\section{Education}
+\vspace{0.1cm}
+\textbf{Ph.D. Computer and Information Science},
+\href{https://scai.engineering.asu.edu/}{Arizona State University, Tempe, AZ}
+\hfill {(exp.) 05/27}
+\\(GPA: \textbf{3.98/4.0})
+
+\vspace{0.01cm}
+
+\textbf{B.S. Computer and Information Science}, 
+\href{https://www.bmsce.ac.in/}{BMS College of Engineering, Bangalore, India}
+\hfill {2019}
+\\ (GPA: \textbf{4.0/4.0})
+
+\vspace{0.1cm}
+\section{Experience}
+
+\textbf{Graduate Research Associate, (Fulton Fellowship)},
+\href{https://scai.engineering.asu.edu/}{
+School of Computing and Augmented Intelligence, Arizona State University}\\
+Supervised by \href{https://asalekin.github.io/}{Dr. Asif Salekin}
+\hfill {2024--Present}
+\begin{innerlist}
+    \item Implemented AI-driven models for analyzing human-centric data in the \textit{Ubiquitous and Intelligent Sensing \href{https://uislab.github.io/}{(UIS) Lab}}, focusing on fairness, privacy, and interpretability.
+    \item Pioneered diffusion-based generative models for acoustic-articulatory representation learning.
+    \item Conceptualized novel fairness enhancing mechanisms for human-centric Federated learning using loss landscape properties.
+    \item Building privacy and utility preserving synthetic data generation pipelines for human-centric data. 
+    \item Worked with advanced UWB sensors (Estimote,Vayyar,Walabot) and point cloud data for detecting health biomarkers and human presence.
+    \item Engineered deep learning solutions for real-time analysis of physiological signals (heart rate, skin conductance), IMU sensor data, and audio features (formants, MFCCs).
+    \item Conducted fairness and explainability (XAI) evaluations using SHAP and LIME to interpret deep learning and machine learning models.
+    \item Designed affect detection models leveraging thermal and RGB images for human emotion and stress recognition.
+    \item Developed novel multi-modal fusion techniques integrating wearable sensor data (Empatica E4, Biopac) for psycho-physiological arousal analysis.
+\end{innerlist}
+
+\textbf{Research Assistant},
+\href{https://ecs.syracuse.edu/}{Syracuse University, College of Engineering and Computer Science}\\
+Supervised by \href{https://asalekin.github.io/}{Dr. Asif Salekin}
+\hfill {2020--2024}
+
+\vspace{0.1cm}
+
+\textbf{Research Assistant},
+\href{http://www.mind-labs.org/}{M.I.N.D Lab Syracuse University} 
+\hfill {2019}\\
+Supervised by \href{http://www.mind-labs.org/people/2017/2/24/mark-r-costa-1}{Dr. Mark Costa}
+\begin{innerlist}
+\item  Developed a NodeJS and Neo4j graph database backend for analyzing and collecting physiological data, supporting mindfulness interventions in AR/VR. 
+\end{innerlist}
+
+\section{Research Focus}
+\vspace{0.1cm}
+
+My research advances trust in multimodal human sensing by developing machine learning methods that are interpretable, fair, and privacy-preserving. I focus on algorithmic techniques that generalize across heterogeneous data sources, mitigate spurious correlations, and protect sensitive information in complex real-world environments. While my methods are evaluated in applications such as monitoring opioid use disorder (OUD), stuttering, depression, and stress, the core contribution lies in building trustworthy foundations for human-centered AI. My research integrates principles from machine learning, ubiquitous computing, and algorithmic fairness to support reliable and equitable sensing systems.
+ 
+\section{Programming Competences}
+
+\vspace{0.1cm}
+
+\textbf{Languages and Libraries}:
+Python, Julia, Java, C++, NodeJS, Android, Pytorch, Pytorch Mobile, Keras, Librosa, Optuna, Pandas, Numpy, Matplotlib, scikit-learn, SQL, SHAP, LIME, Captum, Praat, PraatIO, AI Fairness 360, Flower Framework  
+
+\section{Mentoring}
+\vspace{0.1cm}
+\textbf{Teaching Assistant}
+\hfill{2021-2022}
+\begin{innerlist}
+\item CIS 675 (Design and Analysis of Algorithms)
+\item CIS 477 (Intro/Analysis of Algorithms)
+\end{innerlist}
+\vspace{0.5cm}
+
+\section{Publications}
+
+\begin{bibenum}
+
+\item \textbf{Harshit Sharma}, Yi Xiao, and Asif Salekin. "From Wearables to Depth: Training-Time IMU Supervision for Contactless Stress Detection" (Under Submission IMWUT 2026)
+
+\item \textbf{Harshit Sharma*}, Shaily Roy*\footnote{* Indicates equal contribution.}, and Asif Salekin. "CurvFed: Curvature-Aligned Federated Learning." \url{https://arxiv.org/abs/2404.19725} (Accepted IMWUT 2026).
+
+\item \textbf{Harshit Sharma}, Hao Zhang, Jakub Krzych, Lawrence Jones, Asif Salekin and Sucheta Soundarajan. "From Lab to Farm: Characterizing UWB-Based TDOA Localization Reliability for Dairy Cattle Monitoring" (Poster). (Accepted for IEEE DCOSS-IoT 2026)   
+
+\item Roy, Shaily, \textbf{Harshit Sharma}, Dan Adler, Tanzeem Choudhary and Asif Salekin. "Ethical Fairness without Demographics". (Under review IMWUT 2026).
+
+\item Xiao, Yi, \textbf{Harshit Sharma}, Dessa Bergen-Cico, Asif Salekin. "ReSPIRE: Resilience-Conditioned Stress-Pretrained Inference for Craving Detection in Opioid Use Disorder". (Under review IMWUT 2026)
+
+\item Villa-Sánchez, Bernardo, Alexandra M. Reed, \textbf{Harshit Sharma}, Asif Salekin, Brianna Branson, Elyana Chacon, and Sydney Y. Schaefer. "Examining task-related stress and engagement associated with a performance-based test of functional cognition in older adults" The American journal of occupational therapy 2026 (Under review)
+
+\item Oesterle, Tyler S., Yi Xiao, Nicholas L. Bormann, Dessa K. Bergen-Cico, Benjamin Lai, \textbf{Harshit Sharma}, and Asif Salekin. 'Wearable-derived measures of stress physiology in patients with opioid use disorder treated with methadone: A stress-task study in a real-world clinic with healthy controls." Addiction 2025 (Under Major revisions)
+
+\item Xiao, Yi, \textbf{Harshit Sharma}, Sawinder Kaur, Dessa Bergen-Cico, and Asif Salekin. "Human Heterogeneity Invariant Stress Sensing." Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 9, no. 3 (2025): 1-42. \url{https://dl.acm.org/doi/abs/10.1145/3749465}
+
+\item Xiao, Yi, \textbf{Harshit Sharma}, Victoria Tumanova, and Asif Salekin. "Psychophysiology-aided Perceptually Fluent Speech Analysis of Children Who Stutter." In Proceedings of the \emph{ACM/IEEE 16th International Conference on Cyber-Physical Systems} (with CPS-IoT Week 2025), pp. 1-11. 2025. \url{https://dl.acm.org/doi/abs/10.1145/3716550.3722019}.
+
+\item Kaur, Sawinder, Avery Gump, Yi Xiao, Jingyu Xin, \textbf{Harshit Sharma}, Nina R. Benway, Jonathan L. Preston, and Asif Salekin. "CRoP: Context-wise Robust Static Human-Sensing Personalization." \emph{Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies} 9, no. 2 (2025): 1-34. \url{https://dl.acm.org/doi/abs/10.1145/3729483}.
+
+\item Xiao, Yi, \textbf{Harshit Sharma}, Zhongyang Zhang, Dessa Bergen-Cico, Tauhidur Rahman, and Asif Salekin. "Reading Between the Heat: Co-Teaching Body Thermal Signatures for Non-intrusive Stress Detection." \emph{Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.} 7, 4, Article 189 (December 2023), 30 pages. \url{https://doi.org/10.1145/3631441}.
+
+\item Testa, Brian, Yi Xiao, \textbf{Harshit Sharma}, Avery Gump, and Asif Salekin. "Privacy Against Real-Time Speech Emotion Detection via Acoustic Adversarial Evasion of Machine Learning." \emph{Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.} 7, 3, Article 126 (September 2023), 30 pages. \url{https://doi.org/10.1145/3610887}.
+
+\item \textbf{Harshit Sharma}, Yi Xiao, Victoria Tumanova, and Asif Salekin. "Psychophysiological Arousal in Young Children Who Stutter: An Interpretable AI Approach." \emph{Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.} 6, 3, Article 137 (September 2022), 32 pages. \url{https://doi.org/10.1145/3550326}.
+
+\item Benway, Nina R., Jonathan L. Preston, Asif Salekin, Yi Xiao, \textbf{Harshit Sharma}, and Tara McAllister. "Classifying Rhoticity of /r/ in Speech Sound Disorder Using Age- and Sex-Normalized Formants." arXiv preprint \url{https://arxiv.org/abs/2305.16111} (2023). (Accepted INTERSPEECH 2023).
+
+\item Benway, Nina R., Jonathan Preston, Elaine Hitchcock, Asif Salekin, \textbf{Harshit Sharma}, and Tara McAllister. "PERCEPT-R: An Open-access American English Child/Clinical Speech Corpus Specialized for the Audio Classification of /r/ Sound." OSF Preprints. May 27. \url{https://doi.org/10.31219/osf.io/8zdsg}. (Accepted INTERSPEECH 2022).
+
+\item Agrawal, Arun Prakash, Ankur Choudhary, and \textbf{Harshit Sharma}. "An Empirical Study on the Issues of Traditional Defect Life Cycle in Agile Model." In \emph{International Conference on Advances in Engineering Science Management \& Technology (ICAESMT)-2019}, Uttaranchal University, Dehradun, India, 2019. Available at SSRN: \url{https://ssrn.com/abstract=3402842}.
+
+
+\end{bibenum}
+
+\section{Volunteering}
+
+\begin{itemize}\setlength{\itemsep}{-0.25em}
+    \item \textbf{Academic Program Senator}, \href{https://gradorg.syr.edu/}{Graduate Student Organization, Syracuse University} \hfill{2022-2023}
+    \item \textbf{Reviewer ETRA 2021}, Workshop \hfill{2022}
+    \item \textbf{Reviewer ISWC 2021}, Posters and Demo Session \hfill{2022}
+    \item \textbf{Student Volunteer}, \href{https://ubicomp.org/ubicomp2022/}{UBICOMP 2022} \hfill{2022}
+    \item \textbf{Reviewer CHI 2024}, \href{https://chi2024.acm.org/for-authors/case-studies/}{Case Studies} \hfill{2023}
+    \item \textbf{Reviewer} \href{https://aisnet.org/page/ECISPage}{ECIS} \hfill{2023,2025}
+    \item \textbf{Program Committee Artifact Evaluation}, \href{https://sensys.acm.org/2025/}{Sensys 2025} \hfill{2024}
+    \item \textbf{Reviwer} \href{https://www.ubicomp.org/ubicomp-iswc-2025/}{IMWUT} \hfill{2024,2025,2026}
+    \item \textbf{Reviewer} \href{https://www.ozchi.org/2025/}{OzCHI 2025} \hfill{2025}
+    \item \textbf{Reviewer} \href{https://chi2026.acm.org/}{CHI 2026} \hfill{2025}
+    \item \textbf{Reviewer} \href{https://humanrobotinteraction.org/2026/}{HRI 2026} \hfill{2025} 
+\end{itemize}
+
+\section{Fellowships / Grants}
+\begin{itemize}\setlength{\itemsep}{-0.1em}
+    \item Fulton Fellowship Award: $\$71,500$  \hfill {2024-2025}
+    \item Lambda Research Grant Program  $\$500$ (cloud credits) \hfill{2026-2027} 
+
+\end{itemize}
+
+\section{Awards}
+\begin{itemize}\setlength{\itemsep}{-0.1em}
+    \item \href{https://recognition.asu.edu/Award/42c50349-d81d-4d42-9237-303abce922c2}{SUN Award, ASU} \hfill{2025}
+    \item \href{https://www.youtube.com/watch?v=W1WmRsRgTjo}{Siemens, MakeIT Real Hackathon:} 1st Runner-up \hfill{2017}
+\end{itemize}
+
+\section{News Coverage}
+
+\begin{itemize}\setlength{\itemsep}{-0.1em}
+    \item Our on-going work on combining Artificial Intelligence with mindfulness-based practices to provide intervention for people with opioid use disorder was highlighted by Syracuse University: \href{https://www.syracuse.edu/stories/falk-addiction-studies-opioid-treatment/}{Link}
+    \item Our work on Privacy against Real-Time Speech Emotion Detection via Acoustic Adversarial Evasion of Machine Learning was highlighted by Syracuse University: \href{https://ecs.syracuse.edu/about/news/smart-speakers-smarter-protection}{Link}
+\end{itemize}
+
+
+
+
+\end{document}
+
