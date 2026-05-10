@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HS">
-  <rect width="64" height="64" rx="12" fill="#11483c"/>
+  <rect width="64" height="64" rx="12" fill="#8c1d40"/>
   <text x="32" y="42" text-anchor="middle"
         font-family="Arial, Helvetica, sans-serif"
         font-size="28" font-weight="800" letter-spacing="-1"
-        fill="#f7f8f5">HS</text>
+        fill="#ffc627">HS</text>
 </svg>
