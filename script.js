@@ -26,6 +26,7 @@ const publicationGroups = [
                 title: 'CurvFed: Curvature-Aligned Federated Learning',
                 authors: 'Harshit Sharma*, Shaily Roy*, and Asif Salekin',
                 venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                venueNote: "'csrankings' listed Top Conference",
                 link: 'https://arxiv.org/abs/2404.19725'
             },
             {
@@ -33,6 +34,7 @@ const publicationGroups = [
                 title: 'Human Heterogeneity Invariant Stress Sensing',
                 authors: 'Yi Xiao, Harshit Sharma, Sawinder Kaur, Dessa Bergen-Cico, and Asif Salekin',
                 venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                venueNote: "'csrankings' listed Top Conference",
                 link: 'https://dl.acm.org/doi/abs/10.1145/3749465'
             },
             {
@@ -40,6 +42,7 @@ const publicationGroups = [
                 title: 'CRoP: Context-wise Robust Static Human-Sensing Personalization',
                 authors: 'Sawinder Kaur, Avery Gump, Yi Xiao, Jingyu Xin, Harshit Sharma, Nina R. Benway, Jonathan L. Preston, and Asif Salekin',
                 venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                venueNote: "'csrankings' listed Top Conference",
                 link: 'https://dl.acm.org/doi/abs/10.1145/3729483'
             }
         ]
@@ -59,6 +62,7 @@ const publicationGroups = [
                 title: 'Psychophysiological Arousal in Young Children Who Stutter: An Interpretable AI Approach',
                 authors: 'Harshit Sharma, Yi Xiao, Victoria Tumanova, and Asif Salekin',
                 venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                venueNote: "'csrankings' listed Top Conference",
                 link: 'https://doi.org/10.1145/3550326'
             },
             {
@@ -66,6 +70,7 @@ const publicationGroups = [
                 title: 'Classifying Rhoticity of /r/ in Speech Sound Disorder Using Age- and Sex-Normalized Formants',
                 authors: 'Nina R. Benway, Jonathan L. Preston, Asif Salekin, Yi Xiao, Harshit Sharma, and Tara McAllister',
                 venue: 'INTERSPEECH',
+                venueNote: 'Core A Conference, 2023',
                 link: 'https://arxiv.org/abs/2305.16111'
             },
             {
@@ -73,6 +78,7 @@ const publicationGroups = [
                 title: 'PERCEPT-R: An Open-access American English Child/Clinical Speech Corpus Specialized for the Audio Classification of /r/ Sound',
                 authors: 'Nina R. Benway, Jonathan Preston, Elaine Hitchcock, Asif Salekin, Harshit Sharma, and Tara McAllister',
                 venue: 'INTERSPEECH',
+                venueNote: 'Core A Conference, 2022',
                 link: 'https://doi.org/10.31219/osf.io/8zdsg'
             }
         ]
@@ -85,6 +91,7 @@ const publicationGroups = [
                 title: 'From Lab to Farm: Characterizing UWB-Based TDOA Localization Reliability for Dairy Cattle Monitoring',
                 authors: 'Harshit Sharma, Hao Zhang, Jakub Krzych, Lawrence Jones, Asif Salekin, and Sucheta Soundarajan',
                 venue: 'IEEE International Conference on Distributed Computing in Smart Systems and the Internet of Things',
+                venueNote: 'Core B Conference, 2026',
                 link: ''
             },
             {
@@ -92,6 +99,7 @@ const publicationGroups = [
                 title: 'Reading Between the Heat: Co-Teaching Body Thermal Signatures for Non-intrusive Stress Detection',
                 authors: 'Yi Xiao, Harshit Sharma, Zhongyang Zhang, Dessa Bergen-Cico, Tauhidur Rahman, and Asif Salekin',
                 venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                venueNote: "'csrankings' listed Top Conference",
                 link: 'https://doi.org/10.1145/3631441'
             },
             {
@@ -99,6 +107,7 @@ const publicationGroups = [
                 title: 'Privacy Against Real-Time Speech Emotion Detection via Acoustic Adversarial Evasion of Machine Learning',
                 authors: 'Brian Testa, Yi Xiao, Harshit Sharma, Avery Gump, and Asif Salekin',
                 venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                venueNote: "'csrankings' listed Top Conference",
                 link: 'https://doi.org/10.1145/3610887'
             }
         ]
@@ -225,6 +234,14 @@ const createAuthors = (authors) => {
     return paragraph;
 };
 
+const createVenueTags = (publication) => {
+    if (!publication.venueNote) return null;
+
+    const tags = createElement('div', 'venue-tags');
+    tags.append(createElement('span', 'venue-tag', publication.venueNote));
+    return tags;
+};
+
 const renderFocusAreas = () => {
     const container = document.getElementById('focus-grid');
     focusAreas.forEach((area) => {
@@ -252,6 +269,8 @@ const renderPublications = () => {
 
             article.append(createAuthors(publication.authors));
             article.append(createElement('p', 'venue', publication.venue));
+            const venueTags = createVenueTags(publication);
+            if (venueTags) article.append(venueTags);
             papers.append(article);
         });
 
