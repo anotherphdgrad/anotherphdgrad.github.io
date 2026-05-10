@@ -17,83 +17,103 @@ const focusAreas = [
     }
 ];
 
-const publications = [
+const publicationGroups = [
     {
-        status: 'Accepted - IMWUT 2026',
-        title: 'CurvFed: Curvature-Aligned Federated Learning',
-        authors: 'Harshit Sharma*, Shaily Roy*, and Asif Salekin',
-        venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
-        link: 'https://arxiv.org/abs/2404.19725'
+        theme: 'Trustworthy and Robust Human Sensing',
+        papers: [
+            {
+                status: 'Accepted - IMWUT 2026',
+                title: 'CurvFed: Curvature-Aligned Federated Learning',
+                authors: 'Harshit Sharma*, Shaily Roy*, and Asif Salekin',
+                venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                link: 'https://arxiv.org/abs/2404.19725'
+            },
+            {
+                status: 'Published - IMWUT 2025',
+                title: 'Human Heterogeneity Invariant Stress Sensing',
+                authors: 'Yi Xiao, Harshit Sharma, Sawinder Kaur, Dessa Bergen-Cico, and Asif Salekin',
+                venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                link: 'https://dl.acm.org/doi/abs/10.1145/3749465'
+            },
+            {
+                status: 'Published - IMWUT 2025',
+                title: 'CRoP: Context-wise Robust Static Human-Sensing Personalization',
+                authors: 'Sawinder Kaur, Avery Gump, Yi Xiao, Jingyu Xin, Harshit Sharma, Nina R. Benway, Jonathan L. Preston, and Asif Salekin',
+                venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                link: 'https://dl.acm.org/doi/abs/10.1145/3729483'
+            }
+        ]
     },
     {
-        status: 'Accepted - IEEE DCOSS-IoT 2026',
-        title: 'From Lab to Farm: Characterizing UWB-Based TDOA Localization Reliability for Dairy Cattle Monitoring',
-        authors: 'Harshit Sharma, Hao Zhang, Jakub Krzych, Lawrence Jones, Asif Salekin, and Sucheta Soundarajan',
-        venue: 'IEEE International Conference on Distributed Computing in Smart Systems and the Internet of Things',
-        link: ''
+        theme: 'Speech, Affect, and Clinical Sensing',
+        papers: [
+            {
+                status: 'Published - ICCPS 2025',
+                title: 'Psychophysiology-aided Perceptually Fluent Speech Analysis of Children Who Stutter',
+                authors: 'Yi Xiao, Harshit Sharma, Victoria Tumanova, and Asif Salekin',
+                venue: 'ACM/IEEE International Conference on Cyber-Physical Systems',
+                link: 'https://dl.acm.org/doi/abs/10.1145/3716550.3722019'
+            },
+            {
+                status: 'Published - IMWUT 2022',
+                title: 'Psychophysiological Arousal in Young Children Who Stutter: An Interpretable AI Approach',
+                authors: 'Harshit Sharma, Yi Xiao, Victoria Tumanova, and Asif Salekin',
+                venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                link: 'https://doi.org/10.1145/3550326'
+            },
+            {
+                status: 'Published - INTERSPEECH 2023',
+                title: 'Classifying Rhoticity of /r/ in Speech Sound Disorder Using Age- and Sex-Normalized Formants',
+                authors: 'Nina R. Benway, Jonathan L. Preston, Asif Salekin, Yi Xiao, Harshit Sharma, and Tara McAllister',
+                venue: 'INTERSPEECH',
+                link: 'https://arxiv.org/abs/2305.16111'
+            },
+            {
+                status: 'Published - INTERSPEECH 2022',
+                title: 'PERCEPT-R: An Open-access American English Child/Clinical Speech Corpus Specialized for the Audio Classification of /r/ Sound',
+                authors: 'Nina R. Benway, Jonathan Preston, Elaine Hitchcock, Asif Salekin, Harshit Sharma, and Tara McAllister',
+                venue: 'INTERSPEECH',
+                link: 'https://doi.org/10.31219/osf.io/8zdsg'
+            }
+        ]
     },
     {
-        status: 'Published - IMWUT 2025',
-        title: 'Human Heterogeneity Invariant Stress Sensing',
-        authors: 'Yi Xiao, Harshit Sharma, Sawinder Kaur, Dessa Bergen-Cico, and Asif Salekin',
-        venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
-        link: 'https://dl.acm.org/doi/abs/10.1145/3749465'
+        theme: 'Multimodal and Environmental Sensing Systems',
+        papers: [
+            {
+                status: 'Accepted - IEEE DCOSS-IoT 2026',
+                title: 'From Lab to Farm: Characterizing UWB-Based TDOA Localization Reliability for Dairy Cattle Monitoring',
+                authors: 'Harshit Sharma, Hao Zhang, Jakub Krzych, Lawrence Jones, Asif Salekin, and Sucheta Soundarajan',
+                venue: 'IEEE International Conference on Distributed Computing in Smart Systems and the Internet of Things',
+                link: ''
+            },
+            {
+                status: 'Published - IMWUT 2023',
+                title: 'Reading Between the Heat: Co-Teaching Body Thermal Signatures for Non-intrusive Stress Detection',
+                authors: 'Yi Xiao, Harshit Sharma, Zhongyang Zhang, Dessa Bergen-Cico, Tauhidur Rahman, and Asif Salekin',
+                venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                link: 'https://doi.org/10.1145/3631441'
+            },
+            {
+                status: 'Published - IMWUT 2023',
+                title: 'Privacy Against Real-Time Speech Emotion Detection via Acoustic Adversarial Evasion of Machine Learning',
+                authors: 'Brian Testa, Yi Xiao, Harshit Sharma, Avery Gump, and Asif Salekin',
+                venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+                link: 'https://doi.org/10.1145/3610887'
+            }
+        ]
     },
     {
-        status: 'Published - ICCPS 2025',
-        title: 'Psychophysiology-aided Perceptually Fluent Speech Analysis of Children Who Stutter',
-        authors: 'Yi Xiao, Harshit Sharma, Victoria Tumanova, and Asif Salekin',
-        venue: 'ACM/IEEE International Conference on Cyber-Physical Systems',
-        link: 'https://dl.acm.org/doi/abs/10.1145/3716550.3722019'
-    },
-    {
-        status: 'Published - IMWUT 2025',
-        title: 'CRoP: Context-wise Robust Static Human-Sensing Personalization',
-        authors: 'Sawinder Kaur, Avery Gump, Yi Xiao, Jingyu Xin, Harshit Sharma, Nina R. Benway, Jonathan L. Preston, and Asif Salekin',
-        venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
-        link: 'https://dl.acm.org/doi/abs/10.1145/3729483'
-    },
-    {
-        status: 'Published - IMWUT 2023',
-        title: 'Reading Between the Heat: Co-Teaching Body Thermal Signatures for Non-intrusive Stress Detection',
-        authors: 'Yi Xiao, Harshit Sharma, Zhongyang Zhang, Dessa Bergen-Cico, Tauhidur Rahman, and Asif Salekin',
-        venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
-        link: 'https://doi.org/10.1145/3631441'
-    },
-    {
-        status: 'Published - IMWUT 2023',
-        title: 'Privacy Against Real-Time Speech Emotion Detection via Acoustic Adversarial Evasion of Machine Learning',
-        authors: 'Brian Testa, Yi Xiao, Harshit Sharma, Avery Gump, and Asif Salekin',
-        venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
-        link: 'https://doi.org/10.1145/3610887'
-    },
-    {
-        status: 'Published - IMWUT 2022',
-        title: 'Psychophysiological Arousal in Young Children Who Stutter: An Interpretable AI Approach',
-        authors: 'Harshit Sharma, Yi Xiao, Victoria Tumanova, and Asif Salekin',
-        venue: 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
-        link: 'https://doi.org/10.1145/3550326'
-    },
-    {
-        status: 'Published - INTERSPEECH 2023',
-        title: 'Classifying Rhoticity of /r/ in Speech Sound Disorder Using Age- and Sex-Normalized Formants',
-        authors: 'Nina R. Benway, Jonathan L. Preston, Asif Salekin, Yi Xiao, Harshit Sharma, and Tara McAllister',
-        venue: 'INTERSPEECH',
-        link: 'https://arxiv.org/abs/2305.16111'
-    },
-    {
-        status: 'Published - INTERSPEECH 2022',
-        title: 'PERCEPT-R: An Open-access American English Child/Clinical Speech Corpus Specialized for the Audio Classification of /r/ Sound',
-        authors: 'Nina R. Benway, Jonathan Preston, Elaine Hitchcock, Asif Salekin, Harshit Sharma, and Tara McAllister',
-        venue: 'INTERSPEECH',
-        link: 'https://doi.org/10.31219/osf.io/8zdsg'
-    },
-    {
-        status: 'Published - ICAESMT 2019',
-        title: 'An Empirical Study on the Issues of Traditional Defect Life Cycle in Agile Model',
-        authors: 'Arun Prakash Agrawal, Ankur Choudhary, and Harshit Sharma',
-        venue: 'International Conference on Advances in Engineering Science Management & Technology',
-        link: 'https://ssrn.com/abstract=3402842'
+        theme: 'Earlier Work',
+        papers: [
+            {
+                status: 'Published - ICAESMT 2019',
+                title: 'An Empirical Study on the Issues of Traditional Defect Life Cycle in Agile Model',
+                authors: 'Arun Prakash Agrawal, Ankur Choudhary, and Harshit Sharma',
+                venue: 'International Conference on Advances in Engineering Science Management & Technology',
+                link: 'https://ssrn.com/abstract=3402842'
+            }
+        ]
     }
 ];
 
@@ -189,6 +209,22 @@ const createLinkOrText = (item) => {
     return link;
 };
 
+const createAuthors = (authors) => {
+    const paragraph = createElement('p', 'authors');
+    const name = 'Harshit Sharma';
+    const parts = authors.split(name);
+
+    parts.forEach((part, index) => {
+        if (part) paragraph.append(document.createTextNode(part));
+
+        if (index < parts.length - 1) {
+            paragraph.append(createElement('strong', 'author-self', name));
+        }
+    });
+
+    return paragraph;
+};
+
 const renderFocusAreas = () => {
     const container = document.getElementById('focus-grid');
     focusAreas.forEach((area) => {
@@ -201,17 +237,26 @@ const renderFocusAreas = () => {
 
 const renderPublications = () => {
     const container = document.getElementById('publication-list');
-    publications.forEach((publication) => {
-        const article = createElement('article', 'publication-card');
-        article.append(createElement('p', 'status-label', publication.status));
+    publicationGroups.forEach((group) => {
+        const section = createElement('section', 'publication-theme');
+        section.append(createElement('h3', 'publication-theme-title', group.theme));
 
-        const title = createElement('h3');
-        title.append(createLinkOrText(publication));
-        article.append(title);
+        const papers = createElement('div', 'publication-theme-list');
+        group.papers.forEach((publication) => {
+            const article = createElement('article', 'publication-card');
+            article.append(createElement('p', 'status-label', publication.status));
 
-        article.append(createElement('p', 'authors', publication.authors));
-        article.append(createElement('p', 'venue', publication.venue));
-        container.append(article);
+            const title = createElement('h4');
+            title.append(createLinkOrText(publication));
+            article.append(title);
+
+            article.append(createAuthors(publication.authors));
+            article.append(createElement('p', 'venue', publication.venue));
+            papers.append(article);
+        });
+
+        section.append(papers);
+        container.append(section);
     });
 };
 
