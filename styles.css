@@ -298,7 +298,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 58px;
+    min-height: 64px;
     opacity: 0.88;
     transition: opacity 160ms ease, transform 160ms ease;
 }
@@ -310,9 +310,17 @@ h3 {
 
 .affiliation-logos img {
     display: block;
-    max-width: 100%;
-    max-height: 48px;
     object-fit: contain;
+}
+
+.affiliation-logos .uis-logo {
+    width: 54px;
+    max-height: 54px;
+}
+
+.affiliation-logos .asu-logo {
+    width: 118px;
+    max-height: 54px;
 }
 
 .research-agenda,
