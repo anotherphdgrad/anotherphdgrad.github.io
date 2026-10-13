@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harshit Sharma is a Ph.D. candidate at Arizona State University working on trustworthy human-centered AI, multimodal sensing, fairness, robustness, and interpretability.">
+    <meta name="description" content="Harshit Sharma is a Ph.D. candidate at Arizona State University working on trustworthy machine learning for health: privacy, fairness, and explainability for EHR, wearable, and speech data. Seeking Research Scientist internships for Summer 2027.">
     <meta name="author" content="Harshit Sharma">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#120d10">
+    <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://harshitsharma.is-a.dev/">
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="Harshit Sharma | Ph.D. Candidate at Arizona State University">
-    <meta property="og:description" content="Research profile of Harshit Sharma, Ph.D. candidate at Arizona State University working on trustworthy human-centered AI and multimodal sensing.">
+    <meta property="og:title" content="Harshit Sharma | Trustworthy ML for Health">
+    <meta property="og:description" content="Ph.D. candidate at Arizona State University working on privacy-preserving, fair, and explainable machine learning for multimodal health data.">
     <meta property="og:url" content="https://harshitsharma.is-a.dev/">
     <meta property="og:image" content="https://harshitsharma.is-a.dev/assets/Harshit%20Sharma.png">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Harshit Sharma | Ph.D. Candidate at Arizona State University">
-    <meta name="twitter:description" content="Trustworthy human-centered AI, multimodal sensing, fairness, robustness, and interpretability.">
+    <meta name="twitter:title" content="Harshit Sharma | Trustworthy ML for Health">
+    <meta name="twitter:description" content="Privacy-preserving, fair, and explainable machine learning for EHR, wearable, and speech data.">
     <meta name="twitter:image" content="https://harshitsharma.is-a.dev/assets/Harshit%20Sharma.png">
-    <title>Harshit Sharma | Ph.D. Candidate at Arizona State University</title>
-    <link rel="icon" href="assets/favicon.svg?v=20260510a" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=20260510i">
+    <title>Harshit Sharma | Trustworthy ML for Health</title>
+    <link rel="icon" href="assets/favicon.svg?v=20261012" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+    <link rel="stylesheet" href="styles.css?v=20261012d">
+    <script>
+        try {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+        } catch (error) { /* storage unavailable */ }
+    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -40,13 +50,15 @@
             "url": "https://uislab.github.io/"
         },
         "knowsAbout": [
-            "Trustworthy Human-Centered AI",
-            "Multimodal Sensing",
-            "Machine Learning",
-            "Fairness",
-            "Robustness",
-            "Interpretability",
-            "Federated Learning"
+            "Trustworthy Machine Learning",
+            "Healthcare AI",
+            "Privacy-Preserving Machine Learning",
+            "Algorithmic Fairness",
+            "Federated Learning",
+            "Explainable AI",
+            "Large Language Models",
+            "Clinical NLP",
+            "Multimodal Sensing"
         ],
         "sameAs": [
             "https://scholar.google.com/citations?user=Ja7tYhcAAAAJ&hl=en",
@@ -57,171 +69,184 @@
     </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
-        <a class="brand" href="#top" aria-label="Harshit Sharma homepage">
-            <img src="assets/favicon.svg" alt="" aria-hidden="true">
-            <span>Harshit Sharma</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary navigation">
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="wrap header-inner">
+            <a class="brand" href="#top"><img src="assets/favicon.svg" alt="" width="26" height="26">Harshit Sharma</a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="#news">News</a>
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#experience">Experience</a>
+                <a href="#more">Awards &amp; Service</a>
+                <a href="assets/harshit_sharma_resume_2026.pdf">CV</a>
+            </nav>
+            <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            </button>
+        </div>
     </header>
 
-    <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
-            <aside class="profile-panel" aria-label="Research profile summary">
-                <img src="assets/Harshit%20Sharma.png" alt="Harshit Sharma" class="profile-photo">
-                <div class="profile-details">
-                    <p class="profile-name">Harshit Sharma</p>
-                    <p class="profile-affiliation">
-                        <span>Ph.D. candidate</span>
-                        <span>Arizona State University</span>
-                    </p>
-                    <p class="profile-focus">Trustworthy Human-Centered AI</p>
-                    <p class="profile-topics">Fairness, Robustness, Interpretability for Multimodal AI</p>
-                </div>
-                <div class="affiliation-logos" aria-label="Affiliations">
-                    <a href="https://uislab.github.io/" aria-label="Ubiquitous and Intelligent Sensing Lab">
-                        <img class="uis-logo" src="assets/UIS-LOGO.png" alt="UIS Lab logo">
+    <main id="main">
+        <section class="hero wrap" id="top" aria-labelledby="hero-title">
+            <div class="hero-photo">
+                <img class="portrait" src="assets/Harshit%20Sharma.png" alt="Portrait of Harshit Sharma" width="828" height="981">
+                <div class="affiliations" aria-label="Affiliations">
+                    <a href="https://scai.engineering.asu.edu/" title="Arizona State University, School of Computing and Augmented Intelligence">
+                        <img src="assets/asu-logo-trimmed.png" alt="Arizona State University" width="566" height="239">
                     </a>
-                    <a href="https://scai.engineering.asu.edu/" aria-label="Arizona State University School of Computing and Augmented Intelligence">
-                        <img class="asu-logo" src="assets/ASU%20logo.png" alt="Arizona State University logo">
+                    <a href="https://uislab.github.io/" title="Ubiquitous and Intelligent Sensing Lab">
+                        <img class="logo-light" src="assets/uis-logo-trimmed.png" alt="UIS Lab" width="285" height="237">
+                        <img class="logo-dark" src="assets/uis-logo-dark.png" alt="" width="285" height="237">
                     </a>
                 </div>
-            </aside>
-
-            <div class="hero-divider" aria-hidden="true"></div>
-
-            <div class="hero-copy">
-                <p class="eyebrow">Ph.D. researcher &middot; Human-centered AI</p>
-                <h1 id="hero-title">Trustworthy AI for multimodal human sensing.</h1>
-                <p class="hero-summary">
-                    I am a Ph.D. candidate in Computer and Information Science at Arizona State University,
-                    building reliable, fair, and interpretable machine learning systems for human-centered sensing.
+            </div>
+            <div class="hero-body">
+                <p class="kicker">Ph.D. Candidate &middot; Arizona State University</p>
+                <h1 id="hero-title">Harshit Sharma</h1>
+                <p class="lede">I build <em>trustworthy machine learning for health</em>: models that stay private, fair, and interpretable on messy, multimodal clinical and sensor data.</p>
+                <p>
+                    I am a Ph.D. candidate in Computer and Information Science at
+                    <a href="https://scai.engineering.asu.edu/">Arizona State University</a> (expected December 2027),
+                    advised by <a href="https://uislab.github.io/">Dr. Asif Salekin</a> in the Ubiquitous and Intelligent Sensing Lab, and a Fulton Fellow.
+                    My research covers privacy-preserving ML, explainable AI, and fairness for EHR claims, wearables and nearables
+                    (physiological signals, IMU, thermal, UWB radar), and speech. I work with clinicians in addiction medicine,
+                    speech-language pathology, and geriatrics.
+                    In Summer 2026 I was a Research Scientist Intern at <strong>Optum, UnitedHealth Group</strong>, working on language models over longitudinal EHR claims.
                 </p>
-
-                <div class="hero-actions" aria-label="Profile links">
-                    <a class="button primary" href="mailto:hsharm62@asu.edu">Email</a>
-                    <a class="button" href="https://scholar.google.com/citations?user=Ja7tYhcAAAAJ&hl=en">Google Scholar</a>
-                    <a class="button" href="https://www.linkedin.com/in/harshit-sharma27/">LinkedIn</a>
-                    <a class="button" href="https://github.com/anotherphdgrad">GitHub</a>
-                    <a class="button" href="assets/Harshit_Sharma_CV.pdf">CV</a>
-                </div>
+                <a class="availability" href="mailto:hsharm62@asu.edu?subject=Research%20Scientist%20Internship%20%E2%80%93%20Summer%202027">
+                    <span class="pulse" aria-hidden="true"></span>
+                    <span><strong>Seeking Research Scientist internships for Summer 2027.</strong> Let&rsquo;s talk &rarr;</span>
+                </a>
+                <ul class="profile-links" aria-label="Profile links">
+                    <li><a href="mailto:hsharm62@asu.edu"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a></li>
+                    <li><a href="https://scholar.google.com/citations?user=Ja7tYhcAAAAJ&hl=en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9 12 3l10 6-10 6L2 9Z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></svg>Google Scholar</a></li>
+                    <li><a href="https://github.com/anotherphdgrad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/harshit-sharma27/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a></li>
+                    <li><a href="assets/harshit_sharma_resume_2026.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>CV (PDF)</a></li>
+                </ul>
             </div>
         </section>
 
-        <section class="research-agenda" aria-labelledby="agenda-title">
-            <p class="eyebrow">Research agenda</p>
-            <h2 id="agenda-title">I study how machine learning systems can reason from human-centered sensor data while remaining reliable, equitable, and interpretable.</h2>
-            <p>
-                My work sits at the intersection of ubiquitous computing, machine learning, and responsible AI.
-                I use multimodal data from wearables, speech, thermal imagery, UWB sensors, IMUs, and physiological signals
-                to understand stress, affect, speech, and health-related behavior in real-world settings.
-            </p>
+        <section class="wrap stats" aria-label="At a glance">
+            <dl class="stat-grid">
+                <div><dt>Peer-reviewed papers</dt><dd>13</dd></div>
+                <div><dt>ACM IMWUT papers</dt><dd>6</dd></div>
+                <div><dt>Under review</dt><dd>6</dd></div>
+                <div><dt>Ph.D. GPA</dt><dd>3.98<span>/4.0</span></dd></div>
+            </dl>
         </section>
 
-        <section id="research" class="section-block">
-            <div class="section-heading">
-                <p class="eyebrow">Research snapshot</p>
-                <h2>Methods for reliable, equitable sensing in real environments.</h2>
+        <section id="news" class="wrap section">
+            <div class="section-head">
+                <h2>News</h2>
             </div>
-            <div class="focus-grid" id="focus-grid"></div>
+            <ul class="news-list" id="news-list"></ul>
         </section>
 
-        <section id="publications" class="section-block">
-            <div class="section-heading split">
-                <div>
-                    <p class="eyebrow">Selected publications</p>
-                    <h2>Accepted and published work.</h2>
-                </div>
+        <section id="research" class="wrap section">
+            <div class="section-head">
+                <h2>Research</h2>
+                <p class="section-sub">I study how to make machine learning on human health data trustworthy enough to deploy, in three connected areas.</p>
             </div>
-            <div class="publication-list" id="publication-list"></div>
+            <div class="pillar-grid" id="pillar-grid"></div>
         </section>
 
-        <section id="education" class="section-block two-column">
-            <div class="section-heading">
-                <p class="eyebrow">Education</p>
-                <h2>Education and credentials.</h2>
+        <section id="publications" class="wrap section">
+            <div class="section-head">
+                <h2>Publications</h2>
+                <p class="section-sub"><span class="me-key">Highlighted</span> name marks me; * marks equal contribution. Also on <a href="https://scholar.google.com/citations?user=Ja7tYhcAAAAJ&hl=en">Google Scholar</a>.</p>
             </div>
-            <div class="education-grid">
-                <article class="education-card">
-                    <div>
-                        <h3>Ph.D. Computer and Information Science</h3>
-                        <p><a href="https://scai.engineering.asu.edu/">Arizona State University</a>, Tempe, Arizona</p>
-                    </div>
-                    <strong>GPA 4.0 / 4.0</strong>
-                </article>
-                <article class="education-card">
-                    <div>
-                        <h3>B.S. Computer and Information Science</h3>
-                        <p><a href="https://www.bmsce.ac.in/">BMS College of Engineering</a>, Bangalore, India</p>
-                    </div>
-                    <strong>GPA 4.0 / 4.0</strong>
-                </article>
+            <div class="pub-controls">
+                <div class="chip-row" id="topic-filters" role="group" aria-label="Filter publications by topic"></div>
+                <label class="switch">
+                    <input type="checkbox" id="first-author-toggle">
+                    <span class="switch-track" aria-hidden="true"></span>
+                    First-author only
+                </label>
             </div>
+            <div id="publication-list"></div>
+            <p class="empty-note" id="pub-empty" hidden>No papers match this filter.</p>
         </section>
 
-        <section id="experience" class="section-block two-column">
-            <div class="section-heading">
-                <p class="eyebrow">Experience</p>
-                <h2>Research appointments and systems.</h2>
+        <section id="experience" class="wrap section">
+            <div class="section-head">
+                <h2>Experience</h2>
             </div>
             <div class="timeline" id="experience-list"></div>
         </section>
 
-        <section id="skills" class="section-block">
-            <div class="section-heading">
-                <p class="eyebrow">Technical stack</p>
-                <h2>Methods, tools, and sensing platforms.</h2>
+        <section id="education" class="wrap section">
+            <div class="section-head">
+                <h2>Education</h2>
             </div>
-            <div class="skill-grid" id="skill-grid"></div>
-        </section>
-
-        <section id="achievements" class="section-block two-column">
-            <div class="section-heading">
-                <p class="eyebrow">Achievements</p>
-                <h2>Fellowships, awards, service, and coverage.</h2>
-            </div>
-            <div class="achievement-grid">
-                <section class="compact-panel">
-                    <h3>Fellowships and awards</h3>
-                    <ul id="award-list"></ul>
-                </section>
-                <section class="compact-panel">
-                    <h3>Service</h3>
-                    <ul id="service-list"></ul>
-                </section>
-                <section class="compact-panel wide">
-                    <h3>News coverage</h3>
-                    <ul id="news-list"></ul>
-                </section>
+            <div class="edu-grid">
+                <article class="edu-card">
+                    <p class="edu-when">Expected December 2027</p>
+                    <h3>Ph.D., Computer and Information Science</h3>
+                    <p><a href="https://scai.engineering.asu.edu/">Arizona State University</a>, Tempe, AZ</p>
+                    <p class="edu-gpa">GPA 3.98 / 4.0</p>
+                </article>
+                <article class="edu-card">
+                    <p class="edu-when">2019</p>
+                    <h3>B.S., Computer and Information Science</h3>
+                    <p><a href="https://www.bmsce.ac.in/">BMS College of Engineering</a>, Bangalore, India</p>
+                    <p class="edu-gpa">GPA 4.0 / 4.0</p>
+                </article>
             </div>
         </section>
 
-        <section id="contact" class="contact-band" aria-labelledby="contact-title">
+        <section id="more" class="wrap section">
+            <div class="section-head">
+                <h2>Awards, Service &amp; Teaching</h2>
+            </div>
+            <div class="more-grid">
+                <section class="panel">
+                    <h3>Fellowships &amp; awards</h3>
+                    <ul class="dated-list" id="award-list"></ul>
+                </section>
+                <section class="panel">
+                    <h3>Professional service</h3>
+                    <ul class="plain-list" id="service-list"></ul>
+                </section>
+                <section class="panel">
+                    <h3>Teaching</h3>
+                    <ul class="plain-list">
+                        <li><strong>Teaching Assistant</strong>, Syracuse University (2021&ndash;2022): CIS 675 Design and Analysis of Algorithms (graduate); CIS 477 Introduction to Analysis of Algorithms</li>
+                    </ul>
+                    <h3 class="panel-sub">In the media</h3>
+                    <ul class="plain-list" id="news-coverage"></ul>
+                </section>
+            </div>
+        </section>
+
+        <section id="skills" class="wrap section">
+            <div class="section-head">
+                <h2>Skills</h2>
+            </div>
+            <dl class="skill-list" id="skill-list"></dl>
+        </section>
+
+        <section id="contact" class="wrap contact" aria-labelledby="contact-title">
             <div>
-                <p class="eyebrow">Contact</p>
-                <h2 id="contact-title">I welcome conversations about trustworthy AI and human-centered sensing.</h2>
-                <p>I am especially interested in multimodal sensing, federated learning, fairness, robustness, and interpretable ML for human-centered systems.</p>
+                <h2 id="contact-title">Hiring Research Scientist interns for Summer 2027?</h2>
+                <p>I would be glad to talk about roles in healthcare AI, LLMs for clinical data, privacy-preserving and federated learning, fairness, or multimodal time-series modeling.</p>
             </div>
             <div class="contact-actions">
                 <a class="button primary" href="mailto:hsharm62@asu.edu">hsharm62@asu.edu</a>
-                <a class="button" href="assets/Harshit_Sharma_CV.pdf">View CV</a>
+                <a class="button" href="assets/harshit_sharma_resume_2026.pdf">Download CV</a>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer wrap">
         <p>&copy; 2026 Harshit Sharma</p>
-        <p>Research profile and selected scholarly work.</p>
+        <p>Last updated October 2026</p>
     </footer>
 
-    <script src="script.js?v=20260602a"></script>
+    <script src="figures.js?v=20261012c"></script>
+    <script src="script.js?v=20261012c"></script>
 </body>
 </html>
