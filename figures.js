@@ -290,6 +290,30 @@ const Figures = {
         return svg('Low-bit quantized wearable foundation model keeps accuracy balanced across groups', body);
     },
 
+    acorn: () => {
+        let body = '<text x="12" y="14">SPEAKER &#8594; IMU</text><text x="104" y="14">ACOUSTIC CONCEPTS</text>';
+        body += '<rect class="ln fs" x="10" y="64" width="8" height="20" rx="1.5"/><path class="ln fs" d="M18 64 L30 54 V94 L18 84 Z"/>';
+        body += '<path class="ln s4 thin" d="M35 66 Q40 74 35 82 M40 60 Q47 74 40 88"/>';
+        body += '<rect class="ln fs" x="52" y="50" width="20" height="48" rx="4"/><path class="grid" d="M58 55 H66"/>';
+        body += '<path class="ln s1 thin" d="M76 64 l3 4 l-3 4 l3 4 l-3 4 l3 4"/>';
+        body += '<path class="ln s1 t1" d="M84 60 L96 53 V95 L84 88 Z"/>';
+        const concepts = [['loudness', 0.9, true], ['pitch', 0.7, true], ['voice q.', 0.35, false], ['spectral', 0.6, true]];
+        concepts.forEach(([label, value, selected], index) => {
+            const y = 24 + index * 24;
+            const opacity = selected ? 1 : 0.4;
+            body += `<path class="ln thin sm" d="M96 74 L104 ${y + 8}" opacity="${opacity}"/>`;
+            body += `<g opacity="${opacity}"><rect class="ln thin sm fs" x="104" y="${y}" width="76" height="16" rx="4"/>`;
+            body += `<text x="109" y="${y + 11}">${label}</text>`;
+            body += `<rect class="fl" x="156" y="${y + 5}" width="18" height="6" rx="2"/>`;
+            body += `<rect class="${selected ? 'f1' : 'fm'}" x="156" y="${y + 5}" width="${(18 * value).toFixed(1)}" height="6" rx="2"/></g>`;
+            if (selected) body += `<path class="ln thin s1" d="M180 ${y + 8} L206 66"/>`;
+        });
+        body += '<path class="ln sm dash thin" d="M90 92 Q91 132 150 132 Q206 132 213 75"/>';
+        body += '<text x="150" y="145" text-anchor="middle">residual embedding</text>';
+        body += '<circle class="f2" cx="214" cy="66" r="8"/><text x="214" y="50" text-anchor="middle">task</text>';
+        return svg('Phone motion sensors recover named acoustic concepts such as loudness and pitch; selected concepts plus a residual embedding predict the task, such as emotion or dementia', body);
+    },
+
     crosscue: () => {
         let body = '<text x="12" y="14">CAMERA</text>';
         body += '<rect class="ln fs" x="16" y="62" width="44" height="32" rx="6"/><circle class="ln s1" cx="38" cy="78" r="9"/><circle class="f1" cx="38" cy="78" r="3"/>';

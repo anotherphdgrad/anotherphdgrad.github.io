@@ -29,7 +29,7 @@ const pillars = [
         color: 'var(--c3)',
         icon: '<path d="M4 5h16v10H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/>',
         text: 'Language models over longitudinal EHR claims (TrajNote, built at Optum) and interpretable clinical speech analysis for children who stutter and children with speech sound disorders.',
-        papers: [['stutter-imwut', 'Arousal in stuttering'], ['stutter-iccps', 'Fluent speech'], ['percept-r', 'PERCEPT-R'], ['rhoticity', 'Rhoticity']]
+        papers: [['acorn', 'ACORN'], ['stutter-imwut', 'Arousal in stuttering'], ['stutter-iccps', 'Fluent speech'], ['percept-r', 'PERCEPT-R'], ['rhoticity', 'Rhoticity']]
     }
 ];
 
@@ -47,7 +47,7 @@ const IMWUT = 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiqu
 
 const publicationGroups = [
     {
-        title: 'Under review & preprints',
+        title: 'Under review & in preparation',
         papers: [
             {
                 id: 'grace',
@@ -70,6 +70,17 @@ const publicationGroups = [
                 topics: ['stress'],
                 figure: 'crosscue',
                 tldr: 'Uses wearable IMU signals as supervision only during training, so the deployed contactless stress detector needs no wearable.'
+            },
+            {
+                id: 'acorn',
+                title: 'ACORN: Recovering Acoustic Concepts from Smartphone Motion Sensors for Interpretable Paralinguistic Sensing',
+                authors: 'Harshit Sharma, Nahin Kumar Dey, Faysal Hossain Shezan, Asif Salekin',
+                badge: 'In preparation',
+                status: 'review',
+                firstAuthor: true,
+                topics: ['privacy', 'speech'],
+                figure: 'acorn',
+                tldr: 'Recovers named acoustic concepts (loudness, pitch, voice quality, spectral properties) from smartphone motion sensors alone, then predicts paralinguistic tasks through the informative concepts plus a residual embedding. Reaches 0.84 macro F1 on emotion recognition and 0.79 on dementia detection with unseen speakers.'
             },
             {
                 id: 'flare',
