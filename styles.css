@@ -16,6 +16,7 @@
     --rank-ink: #7a5600;
     --band-bg: #8c1d40;
     --band-ink: #ffffff;
+    --bar: #a3365a;
     --ok: #13897f;
 
     /* figure palette */
@@ -53,6 +54,7 @@
         --rank-ink: #ffcf4d;
         --band-bg: #3a1020;
         --band-ink: #f7f0e8;
+        --bar: #d9638a;
         --ok: #4cc2b5;
         --c1: #e8789a;
         --c2: #f08a66;
@@ -84,6 +86,7 @@
     --rank-ink: #ffcf4d;
     --band-bg: #3a1020;
     --band-ink: #f7f0e8;
+    --bar: #d9638a;
     --ok: #4cc2b5;
     --c1: #e8789a;
     --c2: #f08a66;
@@ -890,6 +893,199 @@ h1 {
     color: var(--muted);
 }
 
+/* ---------- Citation metrics panel ---------- */
+.pub-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 28px;
+    align-items: start;
+}
+
+.metrics-panel {
+    position: sticky;
+    top: 80px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.metrics-panel[hidden] {
+    display: none !important;
+}
+
+.metrics-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.metrics-head h3 {
+    font-size: 0.95rem;
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+.metrics-head a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.metrics-table th,
+.metrics-table td {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+    text-align: right;
+}
+
+.metrics-table thead th {
+    padding-top: 0;
+    white-space: nowrap;
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.metrics-table tbody th {
+    color: var(--ink-2);
+    font-weight: 500;
+    text-align: left;
+}
+
+.metrics-table thead th + th,
+.metrics-table td {
+    width: 72px;
+    padding-left: 8px;
+}
+
+.metrics-table td {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.cite-chart {
+    margin: 16px 0 0;
+}
+
+.cite-chart figcaption {
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.cite-bars {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    height: 112px;
+    border-bottom: 1px solid var(--line);
+}
+
+/* The whole column is the hover target, wider than the bar itself */
+.cite-col {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    outline: none;
+}
+
+.cite-bar {
+    width: min(26px, 70%);
+    border-radius: 4px 4px 0 0;
+    background: var(--bar);
+    transition: opacity 120ms ease;
+}
+
+.cite-col.partial .cite-bar {
+    opacity: 0.55;
+}
+
+.cite-value {
+    margin-bottom: 3px;
+    color: var(--ink-2);
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    min-height: 0.72rem;
+}
+
+.cite-year {
+    position: absolute;
+    bottom: -18px;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.cite-col:hover .cite-bar,
+.cite-col:focus-visible .cite-bar {
+    opacity: 0.8;
+}
+
+.cite-col::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    z-index: 2;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms ease;
+}
+
+.cite-col:first-child::after { left: 0; transform: none; }
+.cite-col:last-child::after { left: auto; right: 0; transform: none; }
+
+.cite-col:hover::after,
+.cite-col:focus-visible::after {
+    opacity: 1;
+}
+
+.metrics-updated {
+    margin: 26px 0 0;
+    color: var(--muted);
+    font-size: 0.74rem;
+}
+
+.pub-links a.cited-by {
+    border-color: transparent;
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
 /* ---------- Figure primitives (inline SVG) ---------- */
 .fig text {
     fill: var(--fig-muted);
@@ -1192,6 +1388,29 @@ h1 {
 }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+    .pub-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-panel {
+        position: static;
+        order: -1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 28px;
+    }
+
+    .metrics-head,
+    .metrics-updated {
+        grid-column: 1 / -1;
+    }
+
+    .cite-chart {
+        margin-top: 0;
+    }
+}
+
 @media (max-width: 900px) {
     .pillar-grid,
     .more-grid {
@@ -1279,6 +1498,14 @@ h1 {
 
     .skill-list {
         grid-template-columns: 1fr;
+    }
+
+    .metrics-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .cite-chart {
+        margin-top: 16px;
     }
 
     .skill-list dd {
