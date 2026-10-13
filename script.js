@@ -47,14 +47,12 @@ const IMWUT = 'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiqu
 
 const publicationGroups = [
     {
-        title: 'Under review & in preparation',
+        title: 'Preprints & ongoing work',
         papers: [
             {
                 id: 'grace',
                 title: 'GRACE: Fair Low-Bit Quantization of a Wearable Foundation Model',
                 authors: 'Harshit Sharma, Asif Salekin',
-                badge: 'Under review',
-                status: 'review',
                 firstAuthor: true,
                 topics: ['fairness', 'adaptation'],
                 figure: 'grace',
@@ -64,8 +62,6 @@ const publicationGroups = [
                 id: 'crosscue',
                 title: 'CrossCue: Training-Time IMU Supervision for Contactless Stress Detection',
                 authors: 'Harshit Sharma, Yi Xiao, Asif Salekin',
-                badge: 'Under review',
-                status: 'review',
                 firstAuthor: true,
                 topics: ['stress'],
                 figure: 'crosscue',
@@ -75,8 +71,6 @@ const publicationGroups = [
                 id: 'acorn',
                 title: 'ACORN: Recovering Acoustic Concepts from Smartphone Motion Sensors for Interpretable Paralinguistic Sensing',
                 authors: 'Harshit Sharma, Nahin Kumar Dey, Faysal Hossain Shezan, Asif Salekin',
-                badge: 'In preparation',
-                status: 'review',
                 firstAuthor: true,
                 topics: ['privacy', 'speech'],
                 figure: 'acorn',
@@ -436,7 +430,7 @@ const renderPaper = (paper) => {
     const body = el('div', 'pub-body');
     const meta = el('div', 'pub-meta');
     const badgeClass = paper.status === 'review' ? 'badge review' : paper.journal ? 'badge journal' : 'badge';
-    meta.append(el('span', badgeClass, paper.badge));
+    if (paper.badge) meta.append(el('span', badgeClass, paper.badge));
     if (paper.rank) meta.append(el('span', 'badge rank', `${STAR}${paper.rank}`));
     if (paper.extraBadge) meta.append(el('span', 'badge subtle', paper.extraBadge));
     if (paper.firstAuthor) meta.append(el('span', 'badge subtle', 'First author'));
