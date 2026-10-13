@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
-    <link rel="stylesheet" href="styles.css?v=20261013">
+    <link rel="stylesheet" href="styles.css?v=20261012d">
     <script>
         try {
             const saved = localStorage.getItem('theme');
@@ -159,35 +159,16 @@
                 <h2>Publications</h2>
                 <p class="section-sub"><span class="me-key">Highlighted</span> name marks me; * marks equal contribution. Also on <a href="https://scholar.google.com/citations?user=Ja7tYhcAAAAJ&hl=en">Google Scholar</a>.</p>
             </div>
-            <div class="pub-layout">
-                <div class="pub-main">
-                    <div class="pub-controls">
-                        <div class="chip-row" id="topic-filters" role="group" aria-label="Filter publications by topic"></div>
-                        <label class="switch">
-                            <input type="checkbox" id="first-author-toggle">
-                            <span class="switch-track" aria-hidden="true"></span>
-                            First-author only
-                        </label>
-                    </div>
-                    <div id="publication-list"></div>
-                    <p class="empty-note" id="pub-empty" hidden>No papers match this filter.</p>
-                </div>
-                <aside class="metrics-panel" id="metrics-panel" aria-labelledby="metrics-title" hidden>
-                    <div class="metrics-head">
-                        <h3 id="metrics-title">Citation metrics</h3>
-                        <a id="metrics-source" href="https://scholar.google.com/citations?user=Ja7tYhcAAAAJ&hl=en">Scholar &#8599;</a>
-                    </div>
-                    <table class="metrics-table">
-                        <thead><tr><th scope="col"><span class="sr-only">Metric</span></th><th scope="col">All</th><th scope="col" id="metrics-since">Since</th></tr></thead>
-                        <tbody id="metrics-rows"></tbody>
-                    </table>
-                    <figure class="cite-chart">
-                        <figcaption>Citations per year</figcaption>
-                        <div class="cite-bars" id="cite-bars"></div>
-                    </figure>
-                    <p class="metrics-updated" id="metrics-updated"></p>
-                </aside>
+            <div class="pub-controls">
+                <div class="chip-row" id="topic-filters" role="group" aria-label="Filter publications by topic"></div>
+                <label class="switch">
+                    <input type="checkbox" id="first-author-toggle">
+                    <span class="switch-track" aria-hidden="true"></span>
+                    First-author only
+                </label>
             </div>
+            <div id="publication-list"></div>
+            <p class="empty-note" id="pub-empty" hidden>No papers match this filter.</p>
         </section>
 
         <section id="experience" class="wrap section">
@@ -266,6 +247,6 @@
     </footer>
 
     <script src="figures.js?v=20261012e"></script>
-    <script src="script.js?v=20261013"></script>
+    <script src="script.js?v=20261012g"></script>
 </body>
 </html>

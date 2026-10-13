@@ -86,7 +86,6 @@ const publicationGroups = [
                 topics: ['fairness'],
                 figure: 'flare',
                 tldr: 'Flare uses Fisher information to find hidden underperforming subgroups and improves them with do-no-harm optimization. The paper also introduces BHE, a metric suite for ethical fairness (beneficence, harm avoidance, equity).',
-                scholarTitle: 'Ethical Fairness without Demographics in Human-Centered AI',
                 links: [{ label: 'arXiv', url: 'https://arxiv.org/abs/2603.13373' }]
             },
             {
@@ -139,10 +138,7 @@ const publicationGroups = [
                 topics: ['fairness'],
                 figure: 'curvfed',
                 tldr: 'Aligns loss-landscape curvature across clients so federated models are fair across groups even when demographic labels are unavailable.',
-                links: [
-                    { label: 'DOI', url: 'https://doi.org/10.1145/3810232' },
-                    { label: 'arXiv', url: 'https://arxiv.org/abs/2404.19725' }
-                ]
+                links: [{ label: 'DOI', url: 'https://doi.org/10.1145/3810232' }]
             },
             {
                 id: 'uwb-farm',
@@ -192,10 +188,7 @@ const publicationGroups = [
                 topics: ['stress', 'adaptation'],
                 figure: 'wearableHetero',
                 tldr: 'Learns stress representations that stay consistent across person-to-person physiological differences, so models generalize to people they were not trained on.',
-                links: [
-                    { label: 'DOI', url: 'https://doi.org/10.1145/3749465' },
-                    { label: 'arXiv', url: 'https://arxiv.org/abs/2506.02256' }
-                ]
+                links: [{ label: 'DOI', url: 'https://doi.org/10.1145/3749465' }]
             },
             {
                 id: 'crop',
@@ -207,10 +200,7 @@ const publicationGroups = [
                 topics: ['adaptation'],
                 figure: 'crop',
                 tldr: 'Personalizes human-sensing models from limited user data so they stay accurate in contexts the user never provided data for.',
-                links: [
-                    { label: 'DOI', url: 'https://doi.org/10.1145/3729483' },
-                    { label: 'arXiv', url: 'https://arxiv.org/abs/2409.17994' }
-                ]
+                links: [{ label: 'DOI', url: 'https://doi.org/10.1145/3729483' }]
             },
             {
                 id: 'stutter-iccps',
@@ -221,10 +211,7 @@ const publicationGroups = [
                 topics: ['speech'],
                 figure: 'speechFluent',
                 tldr: 'Uses physiological signals to analyze speech from children who stutter that listeners perceive as fluent.',
-                links: [
-                    { label: 'DOI', url: 'https://doi.org/10.1145/3716550.3722019' },
-                    { label: 'arXiv', url: 'https://arxiv.org/abs/2211.09089' }
-                ]
+                links: [{ label: 'DOI', url: 'https://doi.org/10.1145/3716550.3722019' }]
             },
             {
                 id: 'thermal-coteach',
@@ -236,10 +223,7 @@ const publicationGroups = [
                 topics: ['stress'],
                 figure: 'thermalStress',
                 tldr: 'Detects stress without contact from body thermal video, using co-teaching to learn reliably from noisy thermal signatures.',
-                links: [
-                    { label: 'DOI', url: 'https://doi.org/10.1145/3631441' },
-                    { label: 'arXiv', url: 'https://arxiv.org/abs/2310.09932' }
-                ]
+                links: [{ label: 'DOI', url: 'https://doi.org/10.1145/3631441' }]
             },
             {
                 id: 'speech-privacy',
@@ -253,7 +237,6 @@ const publicationGroups = [
                 tldr: 'Acoustic adversarial evasion that protects users from real-time speech emotion recognition on smart speakers.',
                 links: [
                     { label: 'DOI', url: 'https://doi.org/10.1145/3610887' },
-                    { label: 'arXiv', url: 'https://arxiv.org/abs/2211.09273' },
                     { label: 'News', url: 'https://ecs.syracuse.edu/about/news/smart-speakers-smarter-protection' }
                 ]
             },
@@ -267,10 +250,7 @@ const publicationGroups = [
                 topics: ['speech'],
                 figure: 'speechFormant',
                 tldr: 'Classifies whether children with speech sound disorder produce /r/ correctly, using formant features normalized for age and sex.',
-                links: [
-                    { label: 'DOI', url: 'https://doi.org/10.21437/Interspeech.2023-312' },
-                    { label: 'arXiv', url: 'https://arxiv.org/abs/2305.16111' }
-                ]
+                links: [{ label: 'arXiv', url: 'https://arxiv.org/abs/2305.16111' }]
             },
             {
                 id: 'stutter-imwut',
@@ -283,10 +263,7 @@ const publicationGroups = [
                 topics: ['speech', 'stress'],
                 figure: 'speechArousal',
                 tldr: 'Interpretable machine learning models of physiological arousal in young children who stutter, explaining which signals drive the predictions.',
-                links: [
-                    { label: 'DOI', url: 'https://doi.org/10.1145/3550326' },
-                    { label: 'arXiv', url: 'https://arxiv.org/abs/2208.08859' }
-                ]
+                links: [{ label: 'DOI', url: 'https://doi.org/10.1145/3550326' }]
             },
             {
                 id: 'percept-r',
@@ -298,10 +275,7 @@ const publicationGroups = [
                 topics: ['speech'],
                 figure: 'speechCorpus',
                 tldr: 'An open-access corpus of American English child and clinical speech for audio classification of the /r/ sound.',
-                links: [
-                    { label: 'DOI', url: 'https://doi.org/10.21437/Interspeech.2022-10785' },
-                    { label: 'Preprint', url: 'https://doi.org/10.31219/osf.io/8zdsg' }
-                ]
+                links: [{ label: 'Paper', url: 'https://doi.org/10.31219/osf.io/8zdsg' }]
             },
             {
                 id: 'agile',
@@ -468,20 +442,13 @@ const renderPaper = (paper) => {
     if (paper.venue) body.append(el('p', 'pub-venue', paper.venue));
     if (paper.tldr) body.append(el('p', 'pub-tldr', paper.tldr));
 
-    const citation = scholarByPaper.get(paper.id);
-    if ((paper.links && paper.links.length) || citation) {
+    if (paper.links && paper.links.length) {
         const links = el('div', 'pub-links');
-        (paper.links || []).forEach((link) => {
+        paper.links.forEach((link) => {
             const a = el('a', '', link.label);
             a.href = link.url;
             links.append(a);
         });
-        if (citation) {
-            const cited = el('a', 'cited-by', `Cited by ${citation.cited_by}`);
-            cited.href = citation.cited_by_url || scholarProfile;
-            cited.title = 'Citation count from Google Scholar';
-            links.append(cited);
-        }
         body.append(links);
     }
 
@@ -581,75 +548,6 @@ const renderLists = () => {
     });
 };
 
-// ---------- Google Scholar metrics ----------
-// assets/scholar.json is refreshed weekly by .github/workflows/scholar.yml.
-
-const scholarByPaper = new Map();
-let scholarProfile = 'https://scholar.google.com/citations?user=Ja7tYhcAAAAJ&hl=en';
-
-const normalizeTitle = (title) => title.toLowerCase().replace(/^\(poster\)\s*/, '').replace(/[^a-z0-9]/g, '');
-
-const matchScholarPapers = (scholarPapers) => {
-    const normalized = scholarPapers.map((entry) => ({ entry, key: normalizeTitle(entry.title) }));
-    allPapers.forEach((paper) => {
-        const key = normalizeTitle(paper.scholarTitle || paper.title).slice(0, 40);
-        const match = normalized.find((candidate) => candidate.key.startsWith(key) || key.startsWith(candidate.key.slice(0, 40)));
-        if (match && match.entry.cited_by > 0) scholarByPaper.set(paper.id, match.entry);
-    });
-};
-
-const formatDate = (iso) => new Date(`${iso}T00:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-
-const renderMetricsPanel = (data) => {
-    const panel = document.getElementById('metrics-panel');
-    document.getElementById('metrics-since').textContent = data.since_year ? `Since ${data.since_year}` : 'Recent';
-    document.getElementById('metrics-source').href = data.profile_url || scholarProfile;
-
-    const rows = document.getElementById('metrics-rows');
-    [['Citations', data.citations], ['h-index', data.h_index], ['i10-index', data.i10_index]].forEach(([label, value]) => {
-        rows.append(el('tr', '', `<th scope="row">${label}</th><td>${value.all}</td><td>${value.since}</td>`));
-    });
-
-    const bars = document.getElementById('cite-bars');
-    const years = data.by_year || [];
-    const max = Math.max(...years.map((point) => point.citations), 1);
-    const currentYear = Number((data.updated || '').slice(0, 4));
-    years.forEach((point, index) => {
-        const partial = point.year === currentYear;
-        const label = `${point.year}: ${point.citations} citations${partial ? ' (year to date)' : ''}`;
-        const column = el('div', `cite-col${partial ? ' partial' : ''}`);
-        column.tabIndex = 0;
-        column.setAttribute('aria-label', label);
-        column.dataset.tip = label;
-        const showValue = index === years.length - 1 || point.citations === max;
-        column.append(
-            el('span', 'cite-value', showValue ? String(point.citations) : ''),
-            el('span', 'cite-bar'),
-            el('span', 'cite-year', partial ? `${point.year}*` : String(point.year))
-        );
-        column.querySelector('.cite-bar').style.height = `${Math.max(4, (point.citations / max) * 100)}%`;
-        bars.append(column);
-    });
-
-    const ytdNote = years.some((point) => point.year === currentYear) ? ' · *year to date' : '';
-    document.getElementById('metrics-updated').textContent = `Updated ${formatDate(data.updated)}${ytdNote}`;
-    panel.hidden = false;
-};
-
-const loadScholarMetrics = async () => {
-    try {
-        const response = await fetch('assets/scholar.json', { cache: 'no-cache' });
-        if (!response.ok) return;
-        const data = await response.json();
-        scholarProfile = data.profile_url || scholarProfile;
-        matchScholarPapers(data.papers || []);
-        renderMetricsPanel(data);
-        renderPublications();
-    } catch (error) {
-        // Metrics are optional; the page works without them.
-    }
-};
-
 const setupThemeToggle = () => {
     const root = document.documentElement;
     document.getElementById('theme-toggle').addEventListener('click', () => {
@@ -672,5 +570,4 @@ document.addEventListener('DOMContentLoaded', () => {
     renderExperience();
     renderLists();
     setupThemeToggle();
-    loadScholarMetrics();
 });
